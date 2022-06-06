@@ -58,9 +58,11 @@ bindsym $mod+x layout toggle split
 bindsym $mod+f fullscreen toggle
 #mybar Start dmenu (a program launcher)
 bindsym $mod+m exec dmenu_run
-# Start firefox 
+# Start google-chrome-stable
 bindsym $mod+d exec dingtalk
-bindsym $mod+q exec firefox
+# bindsym $mod+q exec firefox
+bindsym $mod+q exec google-chrome-stable
+bindsym $mod+shift+q exec chromium
 # set screenshot 
 bindsym $mod+s  exec deepin-screenshot 
 # bindsym $mod+s  exec flameshot
