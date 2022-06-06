@@ -61,7 +61,8 @@ bindsym $mod+m exec dmenu_run
 # Start google-chrome-stable
 bindsym $mod+d exec dingtalk
 # bindsym $mod+q exec firefox
-bindsym $mod+q exec google-chrome-stable
+bindsym $mod+q exec firefox
+# bindsym $mod+q exec google-chrome-stable
 bindsym $mod+shift+q exec chromium
 # set screenshot 
 bindsym $mod+s  exec deepin-screenshot 
