@@ -2,7 +2,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 
-#------------------Config------------------
+# ------------------Config------------------
 # Set inner/outer gaps
 gaps inner 5 
 gaps outer 2 
@@ -25,13 +25,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # background-light
 bindsym XF86MonBrightnessUp exec sudo light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo light -U 10 # decrease screen brightness
-# Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
- # font pango:monospace 8
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
-#------------------Mod------------------
+
+# ------------------Mod------------------
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -77,28 +73,16 @@ bindsym $mod+r exec simplescreenrecorder
 bindsym $mod+n exec kdenlive
 # start the bluetooth
 bindsym $mod+e exec blueberry
-# screen lock
-# bindsym $mod+b exec i3lock-fancy
 # change wallpaper
-#bindsym $mod+d exec variety -n
-#bindsym $mod+u exec variety -p
 bindsym $mod+b exec variety -n
 bindsym $mod+shift+b exec variety -p
 # move the currently focused window to the scratchpad
 bindsym $mod+p move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 bindsym control+shift+p scratchpad show
-#toggle sticky
-#bindsym $mode+s sticky toggle
 
-# focus the parent container
-#bindsym $mod+p fncel high lightocus parent
-# focus the child container
-#bindsym $mod+d focus child
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
 
-#------------------Control------------------
+# ------------------Control------------------
 # start terminal
 bindsym control+Return exec st
 # bindsym control+Return exec alacritty
@@ -120,7 +104,8 @@ bindsym control+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-#------------------Autostar------------------
+
+# ------------------Autostar------------------
 # Autostart applications
 exec_always xmodmap ~/.xmodmap
 exec_always --no-startup-id st
@@ -148,7 +133,8 @@ floating_modifier $mod
 # choose Pictures 
 # exec --no-startup-id feh --randomize --bg-center ~/Pictures/papers/OHR.GCThunderstorm_ZH-CN7535350453_1920x1080.jpg
 
-#------------------Windown------------------
+
+# ------------------Windown------------------
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -176,7 +162,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-#------------------Workspace------------------
+
+# ------------------Workspace------------------
 # Define names for default workspces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -214,7 +201,8 @@ bindsym control+Shift+8 move container to workspace number $ws8
 bindsym control+Shift+9 move container to workspace number $ws9
 bindsym control+Shift+0 move container to workspace number $ws0
 
-#------------------Adjust------------------
+
+# ------------------Adjust------------------
 # Resize Window (you can also use the mouse for that)
 
 bindsym $mod+o mode "resize"
