@@ -56,8 +56,6 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+m exec dmenu_run
 # Start google-chrome-stable
 bindsym $mod+d exec dingtalk
-# start xmind
-bindsym $mod+u exec xmind
 # bindsym $mod+q exec firefox
 bindsym $mod+q exec firefox
 # bindsym $mod+q exec google-chrome-stable
