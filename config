@@ -85,7 +85,7 @@ bindsym control+shift+p scratchpad show
 bindsym control+Return exec st
 # bindsym control+Return exec alacritty
 # kill focused window
-bindsym control+q kill
+# bindsym control+q kill
 bindsym control+shift+q kill
 # Enter fullscreen mode for the focused container
 bindsym control+shift+a fullscreen toggle
