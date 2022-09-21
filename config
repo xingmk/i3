@@ -41,7 +41,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # start terminal
 bindsym $mod+Return exec st
-# bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+c kill
 # split in horizontal orientation
@@ -54,23 +53,23 @@ bindsym $mod+x layout toggle split
 bindsym $mod+f fullscreen toggle
 #mybar Start dmenu (a program launcher)
 bindsym $mod+m exec dmenu_run
-# Start google-chrome-stable
-bindsym $mod+d exec dingtalk
 # bindsym $mod+q exec firefox
 bindsym $mod+q exec firefox
-# bindsym $mod+q exec google-chrome-stable
+# bindsym $mod+q exec chromium
 bindsym $mod+shift+q exec chromium
-# set screenshot 
-bindsym $mod+s  exec deepin-screenshot 
-# bindsym $mod+s  exec flameshot
+
 # start cloud-music
 bindsym $mod+z exec netease-cloud-music
+# start the bluetooth
+bindsym $mod+e exec blueberry
+# Start google-chrome-stable
+bindsym $mod+d exec dingtalk
+# set screenshot 
+bindsym $mod+s  exec deepin-screenshot 
 # start screen_recorde
 bindsym $mod+r exec simplescreenrecorder
 # start kdenlive
 bindsym $mod+n exec kdenlive
-# start the bluetooth
-bindsym $mod+e exec blueberry
 # change wallpaper
 bindsym $mod+b exec variety -n
 bindsym $mod+shift+b exec variety -p
@@ -83,7 +82,6 @@ bindsym control+shift+p scratchpad show
 # ------------------Control------------------
 # start terminal
 bindsym control+Return exec st
-# bindsym control+Return exec alacritty
 # kill focused window
 # bindsym control+q kill
 bindsym control+shift+q kill
@@ -94,13 +92,13 @@ bindsym control+shift+h split h
 # split in vertical orientation
 bindsym control+shift+g split v
 #bindsym control+shift+x layout tabbed
-bindsym control+shift+x layout toggle split
+bindsym control+shift+z layout toggle split
 # Start dmenu (a program launcher)
 bindsym control+shift+m exec dmenu_run
 # toggle tiling / floating
-bindsym control+space floating toggle
+bindsym control+o floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym control+shift+o focus mode_toggle
 
 
 # ------------------Autostar------------------
