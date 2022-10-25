@@ -72,6 +72,8 @@ bindsym $mod+s  exec deepin-screenshot
 bindsym $mod+r exec simplescreenrecorder
 # start kdenlive
 bindsym $mod+n exec kdenlive
+# start meeting
+bindsym $mod+shift+m exec wemeet
 # change wallpaper
 bindsym $mod+b exec variety -n
 bindsym $mod+shift+b exec variety -p
@@ -85,7 +87,7 @@ bindsym control+shift+p scratchpad show
 # start terminal
 bindsym control+Return exec st
 # kill focused window
-# bindsym control+q kill
+bindsym control+q kill
 bindsym control+shift+q kill
 # Enter fullscreen mode for the focused container
 bindsym control+shift+a fullscreen toggle
@@ -106,7 +108,7 @@ bindsym control+shift+o focus mode_toggle
 # ------------------Autostar------------------
 # Autostart applications
 exec_always xmodmap ~/.xmodmap
-exec_always cd ~/VPN && sudo ./clash -d .
+exec_always cd ~/Desktop/VPN && sudo ./clash -d .
 exec_always --no-startup-id st
 exec_always --no-startup-id picom 
 exec_always --no-startup-id variety
