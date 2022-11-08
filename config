@@ -87,7 +87,6 @@ bindsym control+shift+v split v
 #bindsym control+a layout tabbed
 bindsym control+shift+x layout toggle split
 # Start dmenu (a program launcher)
-bindsym control+u exec dmenu_run
 bindsym control+shift+u exec dmenu_run
 # toggle tiling / floating
 bindsym control+o floating toggle
