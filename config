@@ -137,11 +137,6 @@ bindsym  control+shift+j move left
 bindsym  control+shift+k move down
 bindsym  control+shift+i move up
 bindsym  control+shift+l move right
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
 
 # ------------------Workspace------------------
 # Define names for default workspces for which we configure key bindings later on.
@@ -185,7 +180,6 @@ bindsym control+Shift+0 move container to workspace number $ws0
 # ------------------Adjust------------------
 # Resize Window (you can also use the mouse for that)
 
-# bindsym $mod+o mode "resize"
 bindsym control+shift+r mode "resize"
 
 mode "resize" {
