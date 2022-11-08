@@ -94,12 +94,12 @@ bindsym control+shift+o focus mode_toggle
 # ------------------Autostar------------------
 # Autostart applications
 exec_always --no-startup-id cd ~/Desktop/VPN | sudo ./clash -d .
+exec_always --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id st
 exec_always --no-startup-id picom 
 exec_always --no-startup-id variety
 exec_always --no-startup-id polybar
 exec_always --no-startup-id fcitx5
-exec_always --no-startup-id xmodmap ~/.xmodmap
 # exec_always --no-startup-id netease-cloud-music
 exec_always --no-startup-id ~/.config/i3/script/tap-to-click.sh
 #exec_always --no-startup-id ~/.config/i3/inverse-scroll.sh  
