@@ -1,11 +1,7 @@
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
-
 # ------------------Config------------------
 # Set inner/outer gaps
-gaps inner 7 
-gaps outer 3 
+gaps inner 8
+gaps outer 4
 # Smart gaps
 smart_gaps on
 # Hide borders
@@ -13,9 +9,6 @@ hide_edge_borders none
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
 new_float normal
-# change borders
-# bindsym $mod+n border none
-# bindsym $mod+p border pixel 1
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -25,7 +18,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # background-light
 bindsym XF86MonBrightnessUp exec sudo light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo light -U 10 # decrease screen brightness
-
 
 # ------------------Mod------------------
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
@@ -38,7 +30,6 @@ bindsym $mod+Shift+s restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-
 # start terminal
 bindsym $mod+Return exec st
 # kill focused window
@@ -46,34 +37,32 @@ bindsym $mod+c kill
 # split in horizontal orientation
 bindsym $mod+h split h
 # split in vertical orientation
-bindsym $mod+g split v
-#bindsym $mod+x layout tabbed
-bindsym $mod+z layout toggle split
+bindsym $mod+v split v
+#bindsym $mod+u layout tabbed
+bindsym $mod+x layout toggle split
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 #mybar Start dmenu (a program launcher)
-bindsym $mod+m exec dmenu_run
-# bindsym $mod+q exec firefox
-bindsym $mod+q exec firefox
-# bindsym $mod+q exec chromium
-bindsym $mod+shift+g exec google-chrome-stable
+bindsym $mod+u exec dmenu_run
 
-# start VScode
-bindsym $mod+v exec code
-# start cloud-music
-bindsym $mod+shift+v exec netease-cloud-music
 # start the bluetooth
 bindsym $mod+e exec blueberry
-# Start google-chrome-stable
-bindsym $mod+d exec dingtalk
 # set screenshot 
-bindsym $mod+s  exec deepin-screenshot 
+bindsym $mod+s  exec deepin-screenshot
+# bindsym $mod+q exec firefox
+bindsym $mod+shift+f exec firefox
+# bindsym $mod+q exec chromium
+bindsym $mod+shift+g exec google-chrome-stable
+# Start dingtalk
+bindsym $mod+shift+d exec dingtalk
+# start VScode
+bindsym $mod+shift+v exec code
+# start cloud-music
+bindsym $mod+shift+m exec netease-cloud-music
 # start screen_recorde
-bindsym $mod+r exec simplescreenrecorder
+bindsym $mod+shift+r exec simplescreenrecorder
 # start kdenlive
-bindsym $mod+n exec kdenlive
-# start meeting
-bindsym $mod+shift+m exec wemeet
+bindsym $mod+shift+k exec kdenlive
 # change wallpaper
 bindsym $mod+b exec variety -n
 bindsym $mod+shift+b exec variety -p
@@ -82,38 +71,35 @@ bindsym $mod+p move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 bindsym control+shift+p scratchpad show
 
-
 # ------------------Control------------------
 # start terminal
 bindsym control+Return exec st
 # kill focused window
 bindsym control+q kill
-bindsym control+shift+q kill
 # Enter fullscreen mode for the focused container
-bindsym control+shift+a fullscreen toggle
+bindsym control+shift+f fullscreen toggle
 # split in horizontal orientation
 bindsym control+shift+h split h
 # split in vertical orientation
-bindsym control+shift+g split v
-#bindsym control+shift+x layout tabbed
-bindsym control+shift+z layout toggle split
+bindsym control+shift+v split v
+#bindsym control+a layout tabbed
+bindsym control+shift+x layout toggle split
 # Start dmenu (a program launcher)
-bindsym control+shift+m exec dmenu_run
+bindsym control+shift+u exec dmenu_run
 # toggle tiling / floating
 bindsym control+o floating toggle
 # change focus between tiling / floating windows
 bindsym control+shift+o focus mode_toggle
 
-
 # ------------------Autostar------------------
 # Autostart applications
-exec_always xmodmap ~/.xmodmap
-exec_always cd ~/Desktop/VPN && sudo ./clash -d .
+exec_always --no-startup-id cd ~/Desktop/VPN | sudo ./clash -d .
 exec_always --no-startup-id st
 exec_always --no-startup-id picom 
 exec_always --no-startup-id variety
-exec_always --no-startup-id fcitx5
 exec_always --no-startup-id polybar
+exec_always --no-startup-id fcitx5
+exec_always --no-startup-id xmodmap ~/.xmodmap
 # exec_always --no-startup-id netease-cloud-music
 exec_always --no-startup-id ~/.config/i3/script/tap-to-click.sh
 #exec_always --no-startup-id ~/.config/i3/inverse-scroll.sh  
@@ -129,12 +115,6 @@ exec --no-startup-id nm-applet
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# auto choose Pictures ~/Pictures/DesktopBackground 下要放几张图片
-#exec --no-startup-id feh --randomize --bg-fill ~/Pictures/DesktopBackground 
-# choose Pictures 
-# exec --no-startup-id feh --randomize --bg-center ~/Pictures/papers/OHR.GCThunderstorm_ZH-CN7535350453_1920x1080.jpg
-
-
 # ------------------Windown------------------
 # change focus
 bindsym $mod+j focus left
@@ -142,10 +122,10 @@ bindsym $mod+k focus down
 bindsym $mod+i focus up
 bindsym $mod+l focus right
 
-bindsym control+shift+s focus left
-bindsym control+shift+d focus down
-bindsym control+shift+e focus up
-bindsym control+shift+f focus right
+bindsym control+shift+a focus left
+bindsym control+shift+s focus down
+bindsym control+shift+w focus up
+bindsym control+shift+d focus right
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -158,11 +138,10 @@ bindsym  control+shift+k move down
 bindsym  control+shift+i move up
 bindsym  control+shift+l move right
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
 # ------------------Workspace------------------
 # Define names for default workspces for which we configure key bindings later on.
@@ -206,7 +185,7 @@ bindsym control+Shift+0 move container to workspace number $ws0
 # ------------------Adjust------------------
 # Resize Window (you can also use the mouse for that)
 
-bindsym $mod+o mode "resize"
+# bindsym $mod+o mode "resize"
 bindsym control+shift+r mode "resize"
 
 mode "resize" {
@@ -225,40 +204,3 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
-##------------------i3bar------------------
-## Start i3bar to display a workspace bar (plus the system information i3status
-## finds out, if available)
-#bar {
-#	id bar-1
-#		i3bar_command i3bar
-#		status_command i3status
-#		position bottom
-#
-### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-##	tray_output primary
-##	tray_output eDP1
-#
-#		bindsym button4 nop
-#		bindsym button5 nop
-#		font xft:URWGothic-Book 16
-#		strip_workspace_numbers yes
-#
-#		colors {
-##background #222D31
-##statusline #F9FAF9
-##separator  #454947
-#			background #222222
-#			statusline #eeeeee
-#			separator #666666
-#
-##                      border  backgr. text
-#				focused_workspace  #F9FAF9 #16a085 #292F34
-#				active_workspace   #595B5B #353836 #FDF6E3
-#				inactive_workspace #595B5B #222D31 #EEE8D5
-#				binding_mode       #16a085 #2C2C2C #F9FAF9
-#				urgent_workspace   #16a085 #FDF6E3 #E5201D
-#		}
-#
-#}
-#
