@@ -76,6 +76,7 @@ bindsym control+shift+p scratchpad show
 bindsym control+Return exec st
 # kill focused window
 bindsym control+q kill
+bindsym control+shift+q kill
 # Enter fullscreen mode for the focused container
 bindsym control+shift+f fullscreen toggle
 # split in horizontal orientation
