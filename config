@@ -1,22 +1,18 @@
 # ------------------Autostar------------------
 # Autostart applications
-exec_always --no-startup-id cd ~/Desktop/VPN && sudo ./clash -d .
-exec_always --no-startup-id xmodmap ~/.xmodmap
-exec_always --no-startup-id fcitx5
 exec_always --no-startup-id picom 
 exec_always --no-startup-id variety
 exec_always --no-startup-id polybar
-# exec_always --no-startup-id netease-cloud-music
+exec_always --no-startup-id fcitx5 -d
+exec_always --no-startup-id netease-cloud-music
+exec_always --no-startup-id xmodmap ~/.xmodmap
+exec_always --no-startup-id cd ~/Desktop/VPN && sudo ./clash -d .
 exec_always --no-startup-id ~/.config/i3/script/tap-to-click.sh
 exec_always --no-startup-id ~/.config/i3/inverse-scroll.sh  
 # Start XDG autostart .desktop files using dex. See also
-exec --no-startup-id dex --autostart --environment i3
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec_always --no-startup-id dex --autostart --environment i3
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id nm-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -32,9 +28,9 @@ bindsym $mod+c kill
 bindsym $mod+h split h
 # split in vertical orientation
 bindsym $mod+v split v
-#bindsym $mod+u layout tabbed
+# layout tabbed
 bindsym $mod+x layout toggle split
-# Enter fullscreen mode for the focused container
+# enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # move the currently focused window to the scratchpad
@@ -79,17 +75,17 @@ bindsym $mod+shift+b exec variety -p
 
 # -------------Control-Start-------------
 # mybar Start dmenu (a program launcher)
-bindsym Control+shift+r exec dmenu_run
-# start VScode
-bindsym Control+shift+c exec code
-# Start Dingtalk
-bindsym Control+shift+t exec dingtalk
-# start Music
-bindsym Control+shift+m exec netease-cloud-music
-# start screen_recorde
-bindsym Control+shift+z exec simplescreenrecorder
-# start kdenlive
-bindsym Control+shift+n exec kdenlive
+bindsym Control+shift+g exec dmenu_run
+# # Start Dingtalk
+# bindsym Control+shift+t exec dingtalk
+# # start Music
+# bindsym Control+shift+m exec netease-cloud-music
+# # start VScode
+# bindsym control+shift+c exec code
+# # start screen_recorde
+# bindsym Control+shift+z exec simplescreenrecorder
+# # start kdenlive
+# bindsym Control+shift+n exec kdenlive
 
 # ------------------Config------------------
 # Set inner/outer gaps
@@ -177,6 +173,7 @@ bindsym control+Shift+0 move container to workspace number $ws0
 # Resize Window (you can also use the mouse for that)
 
 bindsym $mod+o mode "resize"
+bindsym control+shift+r mode "resize"
 
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
