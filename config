@@ -4,7 +4,6 @@ exec_always --no-startup-id picom
 exec_always --no-startup-id variety
 exec_always --no-startup-id polybar
 exec_always --no-startup-id fcitx5 -d
-exec_always --no-startup-id netease-cloud-music
 exec_always --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id cd ~/Desktop/VPN && sudo ./clash -d .
 exec_always --no-startup-id ~/.config/i3/script/tap-to-click.sh
@@ -44,8 +43,6 @@ bindsym control+Return exec st
 # kill focused window
 bindsym control+q kill
 bindsym control+shift+q kill
-# Enter fullscreen mode for the focused container
-bindsym control+shift+a fullscreen toggle
 
 # toggle tiling / floating
 bindsym control+o floating toggle
@@ -53,15 +50,6 @@ bindsym control+o floating toggle
 bindsym control+shift+o focus mode_toggle
 
 # -------------Mod-Start-------------
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+s restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# mybar Start dmenu (a program launcher)
-bindsym $mod+m exec dmenu_run
 # start the bluetooth
 bindsym $mod+e exec blueberry
 # set screenshot 
@@ -73,19 +61,16 @@ bindsym $mod+shift+q exec google-chrome-stable
 bindsym $mod+b exec variety -n
 bindsym $mod+shift+b exec variety -p
 
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+s restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
 # -------------Control-Start-------------
 # mybar Start dmenu (a program launcher)
-bindsym Control+shift+g exec dmenu_run
-# # Start Dingtalk
-# bindsym Control+shift+t exec dingtalk
-# # start Music
-# bindsym Control+shift+m exec netease-cloud-music
-# # start VScode
-# bindsym control+shift+c exec code
-# # start screen_recorde
-# bindsym Control+shift+z exec simplescreenrecorder
-# # start kdenlive
-# bindsym Control+shift+n exec kdenlive
+bindsym Control+g exec dmenu_run
 
 # ------------------Config------------------
 # Set inner/outer gaps
@@ -172,7 +157,6 @@ bindsym control+Shift+0 move container to workspace number $ws0
 # -------------Adjust-------------
 # Resize Window (you can also use the mouse for that)
 
-bindsym $mod+o mode "resize"
 bindsym control+shift+r mode "resize"
 
 mode "resize" {
