@@ -45,7 +45,7 @@ bindsym control+shift+o focus mode_toggle
 
 # -------------Open-------------
 # mybar Start dmenu (a program launcher)
-bindsym Control+h exec dmenu_run
+bindsym Control+d exec dmenu_run
 
 # set screenshot 
 bindsym $mod+x exec deepin-screenshot
