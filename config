@@ -6,8 +6,8 @@ exec_always --no-startup-id polybar
 exec_always --no-startup-id fcitx5 -d
 exec_always --no-startup-id xmodmap ~/.xmodmap
 exec_always --no-startup-id cd ~/Desktop/VPN && sudo ./clash -d .
-exec_always --no-startup-id ~/.config/i3/script/tap-to-click.sh
 exec_always --no-startup-id ~/.config/i3/inverse-scroll.sh  
+exec_always --no-startup-id ~/.config/i3/script/tap-to-click.sh
 # Start XDG autostart .desktop files using dex. See also
 exec_always --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -30,9 +30,9 @@ bindsym $mod+h split h
 # split in vertical orientation
 bindsym $mod+v split v
 # layout tabbed
-bindsym $mod+a layout toggle split
+bindsym $mod+u layout toggle split
 # enter fullscreen mode for the focused container
-bindsym $mod+u fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # move the currently focused window to the scratchpad
 bindsym $mod+p move scratchpad
@@ -45,7 +45,7 @@ bindsym control+shift+o focus mode_toggle
 
 # -------------Open-------------
 # mybar Start dmenu (a program launcher)
-bindsym Control+d exec dmenu_run
+bindsym Control+m exec dmenu_run
 
 # set screenshot 
 bindsym $mod+x exec deepin-screenshot
@@ -73,28 +73,28 @@ hide_edge_borders none
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
 new_float normal
+# background-light
+bindsym XF86MonBrightnessUp exec sudo light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec sudo light -U 10 # decrease screen brightness
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-# background-light
-bindsym XF86MonBrightnessUp exec sudo light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec sudo light -U 10 # decrease screen brightness
 
 # ------------------Windown------------------
 # change focus
-bindsym $mod+s focus left
-bindsym $mod+d focus down
-bindsym $mod+e focus up
-bindsym $mod+f focus right
+bindsym $mod+l focus left
+bindsym $mod+j focus down
+bindsym $mod+i focus up
+bindsym $mod+j focus right
 
 # move focused window
-bindsym $mod+shift+s move left
-bindsym $mod+shift+d move down
-bindsym $mod+shift+e move up
-bindsym $mod+shift+f move right
+bindsym control+shift+s move left
+bindsym control+shift+d move down
+bindsym control+shift+e move up
+bindsym control+shift+f move right
 
 # -------------Workspace-------------
 # Define names for default workspces for which we configure key bindings later on.
@@ -137,7 +137,7 @@ bindsym control+Shift+0 move container to workspace number $ws0
 # -------------Adjust-------------
 # Resize Window (you can also use the mouse for that)
 
-bindsym $mod+z mode "resize"
+bindsym control+shift+r mode "resize"
 
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
