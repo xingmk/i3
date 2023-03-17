@@ -58,7 +58,7 @@ bindsym $mod+shift+b exec variety -p
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+s restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -86,7 +86,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # ------------------Windown------------------
 # change focus
 bindsym $mod+l focus left
-bindsym $mod+j focus down
+bindsym $mod+k focus down
 bindsym $mod+i focus up
 bindsym $mod+j focus right
 
